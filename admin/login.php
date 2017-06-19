@@ -4,7 +4,7 @@
 </head>
 <body>
 <h3>欢迎登陆</h3>
-<form action="doAction.php" method="post">
+<form action="doLogin.php" method="post">
     <li>管理员帐号</li>
     <input type="text" name="username">
     <li>密码</li>
