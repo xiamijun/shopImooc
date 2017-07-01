@@ -1,7 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: XJ
- * Date: 2017/6/14
- * Time: 11:02
+ * 弹出信息并跳转
+ * @param $mes
+ * @param $url
  */
+function alertMes($mes,$url){
+    echo "<script>alert('{$mes}')</script>";
+    echo "<script>window.location.href='{$url}'</script>";
+}

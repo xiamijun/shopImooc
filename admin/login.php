@@ -13,6 +13,7 @@
     <img src="getVerify.php" alt="验证码">
     <input type="checkbox"><label>自动登录</label>
     <input type="submit" value="登录">
+    <input type="checkbox" name="autoFlag"><label for="">自动登录(一周内自动登陆)</label>
 </form>
 </body>
 </html>
