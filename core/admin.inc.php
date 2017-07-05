@@ -86,3 +86,21 @@ function delAdmin($id){
     }
     return $mes;
 }
+
+function getAdminByPage($pageSize=2){
+    $sql="select * from imooc_admin";
+    $totalRows=getResultNum($sql);
+    global $totalPage;
+    $totalPage=ceil($totalRows/$pageSize);
+    $page=$_REQUEST['page']?(int)$_REQUEST['page']:1;
+    if ($page<1||$page==null||!is_numeric($page)){
+        $page=1;
+    }
+    if ($page>=$totalPage){
+        $page=$totalPage;
+    }
+    $offset=($page-1)*$pageSize;
+    $sql="sqlect id,username,email from imooc_admin limit $offset,$pageSize";
+    $rows=fetchAll($sql);
+    return $rows;
+}

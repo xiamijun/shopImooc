@@ -1,5 +1,20 @@
 <?php
-$str='123asd';
-$str_array=str_split($str);
-$str_array=array_count_values($str_array);
-print_r($str_array);
+function jumpFloor($number){
+    if ($number<=0){
+        return 0;
+    }
+    if ($number==1){
+        return 1;
+    }
+    if ($number==2){
+        return 2;
+    }
+    $a=1;
+    $b=2;
+    for ($i=2;$i<$number;$i++){
+        $c=$a+$b;
+        $a=$b;
+        $b=$c;
+    }
+    return $c;
+}

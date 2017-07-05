@@ -1,6 +1,21 @@
 <?php
 require_once '../include.php';
-$rows=getAllAdmin();
+$sql="select * from imooc_admin";
+$totalRows=getResultNum($sql);
+$pageSize=2;
+$totalPage=ceil($totalRows/$pageSize);
+$page=$_REQUEST['page']?(int)$_REQUEST['page']:1;
+if ($page<1||$page==null||!is_numeric($page)){
+    $page=1;
+}
+if ($page>=$totalPage){
+    $page=$totalPage;
+}
+$offset=($page-1)*$pageSize;
+$sql="sqlect id,username,email from imooc_admin limit $offset,$pageSize";
+$rows=fetchAll($sql);
+
+//$rows=getAllAdmin();
 if (!$rows){
     alertMes('没有管理员，请添加','addAdmin.php');
     exit();
@@ -38,6 +53,15 @@ if (!$rows){
     </tr>
     <?php
     endforeach;
+    if ($rows>$pageSize):
+    ?>
+    <tr>
+        <td colspan="44">
+            <?echo showPage($page,$totalPage);?>
+        </td>
+    </tr>
+    <?php
+    endif;
     ?>
     </tbody>
 </table>

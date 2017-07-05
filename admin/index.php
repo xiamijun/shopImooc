@@ -25,6 +25,17 @@ if (isset($_SESSION['adminName'])){
         <!--左侧列表-->
         <ul class="mList">
             <li>
+                <h3><span>+</span>分类管理</h3>
+                <dl>
+                    <dd>
+                        <a href="addCate.php" target="mainFrame">添加分类</a>
+                    </dd>
+                    <dd>
+                        <a href="listCate" target="mainFrame">分类列表</a>
+                    </dd>
+                </dl>
+            </li>
+            <li>
                 <h3><span>+</span>管理员管理</h3>
                 <dl>
                     <dd><a href="addAdmin.php" target="mainFrame">添加管理员</a></dd>
