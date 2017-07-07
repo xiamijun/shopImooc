@@ -1,13 +1,13 @@
 <?php
 
 function p($i){
-    $N=11;
-    if ($i==1||$i==7){
-        return 2/$N;
-    }elseif ($i==2||$i==4||$i==5||$i==6){
-        return 1/$N;
-    }elseif ($i==3){
+    $N=14;
+    if ($i==1){
         return 3/$N;
+    }elseif ($i==7||$i==10){
+        return 2/$N;
+    }elseif ($i==3||$i==4||$i==5||$i==6||$i==9||$i==8||$i==2){
+        return 1/$N;
     }
 }
 
@@ -27,7 +27,7 @@ function bigP($s){
     return $Ps;
 }
 
-for ($s=1;$s<=7;$s++){
-    echo log(bigP($s))+log(1-bigP($s))+H($s)/bigP($s)+(H(7)-H($s))/(1-bigP($s)).'</br>';
+for ($s=1;$s<=10;$s++){
+    echo log(bigP($s))+log(1-bigP($s))+H($s)/bigP($s)+(H(10)-H($s))/(1-bigP($s)).'</br>';
 }
 
